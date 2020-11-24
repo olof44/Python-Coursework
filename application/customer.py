@@ -24,73 +24,71 @@ class Customer:
         if self.animal == "Pig":
             self.pig = 5
             self.how_food = (self.how_animals * self.pig) * self.how_days
-            print("============ " + str(self.name) + " ============")
+            print("============== " + str(self.name) + " ==============")
             print("For " + str(self.how_animals)+ " Pigs, for " + str(self.how_days) + " days you need: " + str(self.how_food) + "kg. of food")
         elif self.animal == "Horse":
             self.horse = 9
             self.how_food = (self.how_animals * self.horse) * self.how_days
-            print("============ " + str(self.name) + " ============")
+            print("============== " + str(self.name) + " ==============")
             print("For " + str(self.how_animals)+ " Horses, for " + str(self.how_days) + " days you need: " + str(self.how_food) + "kg. of food")
         elif self.animal == "Dog":
             self.dog = 1
             self.how_food = (self.how_animals * self.dog) * self.how_days
-            print("============ " + str(self.name) + " ============")
+            print("============== " + str(self.name) + " ==============")
             print("For " + str(self.how_animals)+ " Dogs, for " + str(self.how_days) + " days you need: " + str(self.how_food) + "kg. of food")
 
 
     def buy(self):
         self.quan = self.how_food
-        print("Your balance is: " + str(self.money))
+        print("Your balance is: " + str(self.money) + "$")
         if self.animal == "Pig":
-            print("================ Pig ================")
+            print("================ Pig ===============")
             print("We have: " + str(f1.stock[f1.stockId]) + "kg. of pig food.")
             self.k = f1.v * self.quan
             if self.money >= self.k:
-                if f1.s >= self.quan:
-                   f1.stock[f1.stockId] = f1.s - self.quan
+                if f1.stock[f1.stockId] >= self.quan:
+                   f1.stock[f1.stockId] = f1.stock[f1.stockId] - self.quan
                    print("You bought: " + str(self.quan) + "kg." + "\nTotal amount to pay: " + str(self.k)+ "$")
                    print("You have: " + str(self.money - self.k) + "$ left")
                    print(str(f1.stock[f1.stockId]) + "kg. of pig food left in stock.")
-                   print("==================================\n")
+                   print("====================================\n")
                 else:
                    print("We don't have " + str(self.quan) + "kg. of that food!\n")
-                   print("==================================\n")
+                   print("====================================\n")
             else:
                    print("You don't have enough money for " + str(self.quan) + "kg.!\n")
         elif self.animal == "Horse":
-            print("================ Horse ================")
+            print("=============== Horse ===============")
             print("We have: " + str(f2.stock[f2.stockId]) + "kg. of horse food.")
             self.k = f2.v * self.quan
             if self.money >= self.k:
-                if f2.s >= self.quan:
-                   f2.stock[f2.stockId] = f2.s - self.quan
+                if f2.stock[f2.stockId] >= self.quan:
+                   f2.stock[f2.stockId] = f2.stock[f2.stockId] - self.quan
                    print("You bought: " + str(self.quan) + "kg." + "\nTotal amount to pay: " + str(self.k)+ "$")
                    print("You have: " + str(self.money - self.k) + "$ left")
                    print(str(f2.stock[f2.stockId]) + "kg. of horse food left in stock.")
-                   print("==================================\n")
+                   print("====================================\n")
                 else:
                    print("We don't have " + str(self.quan) + "kg. of that food!")
-                   print("==================================\n")
+                   print("====================================\n")
             else:
                    print("You don't have enough money for " + str(self.quan) + "kg.!\n")
         elif self.animal == "Dog":
-            print("================ Dog ================")
+            print("=============== Dog ================")
             print("We have: " + str(f3.stock[f3.stockId]) + "kg. of dog food.")
             self.k = f3.v * self.quan
             if self.money >= self.k:
-                if f3.s >= self.quan:
-                   f3.stock[f3.stockId] = f3.s - self.quan
+                if f3.stock[f3.stockId] >= self.quan:
+                   f3.stock[f3.stockId] = f3.stock[f3.stockId] - self.quan
                    print("You bought: " + str(self.quan) + "kg." + "\nTotal amount to pay: " + str(self.k)+ "$")
                    print("You have: " + str(self.money - self.k) + "$ left")
                    print(str(f3.stock[f3.stockId]) + "kg. of dog food left in stock.")
-                   print("==================================\n")
+                   print("====================================\n")
                 else:
                    print("We don't have " + str(self.quan) + "kg. of that food!")
-                   print("==================================\n")
+                   print("====================================\n")
             else:
                    print("You don't have enough money for " + str(self.quan) + "kg.!\n")
         else:
             print("=================== " + str(self.animal) + " ===================\n")
             print("We don't have "+ str(self.animal) + " food right now!\n")
-
-
