@@ -6,7 +6,7 @@ class Stock:
 
 
     def add_item(self, how_much):
-        self.s = self.stock[self.stockId] = self.q + how_much
+        self.stock[self.stockId] = self.q + how_much
         print(str(how_much) + "kg. added to the stock")
 
 
@@ -19,4 +19,3 @@ class Stock:
             5 : 1
         }
         self.v = self.prices[self.stockId]
-
